@@ -1,0 +1,46 @@
+<div class="container">
+  <form (submit)="guardar()" autocomplete="off">
+    <label for="name"> Nombre : </label>
+    <input
+      type="text"
+      required
+      [(ngModel)]="agregarPersona.name"
+      name="nombre"
+      placeholder="Ingresa tu nombre"
+    />
+
+    <label for="title"> Titulo : </label>
+    <input
+      type="text"
+      required
+      [(ngModel)]="agregarPersona.title"
+      id="title"
+      name="title"
+      placeholder="Ingrese si titulo"
+    />
+
+    <label for="bio"> Bio : </label>
+    <input
+      type="text"
+      required
+      [(ngModel)]="agregarPersona.bio"
+      id="bio"
+      name="bio"
+      placeholder="Ingrese una bio"
+    />
+
+    <button type="submit">Guardar</button>
+  </form>
+</div>
+
+<div class="orden">
+  <hr />
+
+  <h2>Listado de Personas</h2>
+  <hr />
+
+  <app-tarjeta-persona
+    *ngFor="let person of persona"
+    [personas]="person"
+  ></app-tarjeta-persona>
+</div>
